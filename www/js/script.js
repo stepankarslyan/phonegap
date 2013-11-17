@@ -1,3 +1,5 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+
 var checkConnection = function() {
    var networkState = navigator.network.connection.type;
    var states = {};
@@ -20,6 +22,6 @@ var onDeviceReady = function() {
 	    window.location="www/index.html"; 
     }
     else {
-			 window.location="http://google.com";
+			 window.location="http://192.168.1.4:8080";
     }
 }
