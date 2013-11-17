@@ -1,6 +1,6 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
-var checkConnection = function() {
+function checkConnection() {
    var networkState = navigator.network.connection.type;
    var states = {};
    states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -15,7 +15,7 @@ var checkConnection = function() {
   
 };
 
-var onDeviceReady = function() {
+function onDeviceReady() {
 	var networkState = checkConnection();
 	/* load local files if there is not network connection */
     if (networkState == Connection.NONE) {
