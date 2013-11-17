@@ -20,7 +20,6 @@
 		<gap:platform name="symbian" />
 	</gap:platforms>
 
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<!-- sample preference specification -->

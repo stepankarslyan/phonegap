@@ -20,6 +20,6 @@ var onDeviceReady = function() {
 	    window.location="www/index.html"; 
     }
     else {
-			 window.location="http://192.168.1.4:8080";
+			 window.location="http://google.com";
     }
 }
