@@ -1,3 +1,4 @@
+// Don't let unused files !!!!
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function checkConnection() {

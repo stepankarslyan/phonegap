@@ -1,0 +1,4 @@
+- Be carefull with syntax
+- Give special attention to file names
+- Don't let unused files or code or duplicate files? Why www and why 2 times config and index.html?
+- Add a github repository for the nodejs server side
