@@ -29,5 +29,5 @@ var app = {
 	},
 };
 
-	document.addEventListener("deviceready", app.onDeviceReady, false);
+document.addEventListener("deviceready", app.onDeviceReady, false);
 
