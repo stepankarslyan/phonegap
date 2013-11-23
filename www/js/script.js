@@ -8,10 +8,10 @@ var app = {
 		var status;
 		var networkState = navigator.network.connection.type;
 		
-		if(networkState == Connection.NONE) {
+		if (networkState == Connection.NONE) {
 			status = true;
 		}
-		else{ status = false;
+		else { status = false;
 		}
 		
 		return status;
@@ -19,8 +19,7 @@ var app = {
 
 	onDeviceReady: function() {
 		// load local files if there is not network connection 
-		//var isOffline = app.isOffline();
-		if (app.isOffline) {
+		if (app.isOffline()) {
 		  app.openLocation("www/offline/index.html");
 		}
 		else {
