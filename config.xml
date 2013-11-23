@@ -1,3 +1,4 @@
+<!-- use xxx = ... in javascript but in xml tags <xxx a=""> -->
 <?xml version = "1.0" encoding = "UTF-8"?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
@@ -7,9 +8,11 @@
 	<name>sample web App</name>
 
 	<description>
+	<!-- This text should be with 2 tabs -->
     sample web App with java script an html
 	</description>
 
+	<!-- To cut tags should be an execptions to help reading -->
 	<author href = "http://lev90.github.com"
     email = "levon.hakopyan.gmail.com">
     Levon
@@ -20,5 +23,6 @@
 		<gap:platform name = "symbian" />
 	</gap:platforms>
 
+	<!-- Still some problems with spaces and tabs -->
 		<feature name = "http://api.phonegap.com/1.0/network"/>
 </widget>
