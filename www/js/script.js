@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-
-var online = navigator.onLine;
-if (online === true) {
-	alert ("online");
-	//window.location.assign("http://www.google.com");
-}
-else {
-
-alert("Hello you are offline please connect to internet !");
-}
-
-=======
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function checkConnection() {
@@ -32,10 +19,9 @@ function onDeviceReady() {
 	var networkState = checkConnection();
 	/* load local files if there is not network connection */
     if (networkState == Connection.NONE) {
-	    window.location="www/tamplate/offline.html";
+	    window.location="www/index.html"; 
     }
     else {
 			 window.location="http://192.168.1.4:8080";
     }
 }
->>>>>>> 9bbcc5c3df7e325dc2b4138c15043ef19d4977c8
