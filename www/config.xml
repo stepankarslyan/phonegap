@@ -20,7 +20,10 @@
 		<gap:platform name="symbian" />
 	</gap:platforms>
 	
-	<gap:plugin name="org.apache.cordova.geolocation" />
+	<gap:plugin name="org.apache.cordova.geolocation" >
+		<param name="APIKey" value="12345678" />
+		<param name="APISecret" value="12345678" />
+	</gap:plugin>
 	
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	
