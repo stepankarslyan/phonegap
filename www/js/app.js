@@ -12,12 +12,14 @@ var app = {
 
 	onDeviceReady: function() {
 		// load local files if there is not network connection 
+		// i will use only local page to test geolocation plugin
 		if (app.isOnline()) {
-		  app.openLocation(app.onlineLocation);
-		}
+		  app.openLocation(app.offlineLocation);
+	/*	}
 		else {
 			app.openLocation(app.offlineLocation);
 		}
+	*/
 	},
 };
 
