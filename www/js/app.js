@@ -1,7 +1,23 @@
+/**
+ * How much code do you want to put in "app", you shoudl split your code in object/files that have only one responsability
+ * We created an object to switch between online and offline, you named it app that is a mistake, the responsability of this code is 
+ * not to be the app but to switch between versions, you could choose connectivitySwitch, and then you would not make the mistake 
+ * to put geolocation code in the same file / object !!!
+ * 
+ * ALWAYS THINK TO CREATE OBJECT WITH RESPONSABILITY
+ * 
+ * like this the code is easy to find, maintain and reuse. This code is not reusable because you mixed subjects
+ **/
 var app = {
 	
+	// Did you learn about last code review? What about mixing technical and business code
+	// Even more you mix technical, business and presentation by building html all in one function
+	// Create one geolocation object file only responsible to get geolocation informations
+	// use it in online html
+	// and create an main js that will use this object
+	// And do what is asked, the goal was to get geolocation and to log it on nodejs SERVER log !!! not on html
 	showMyLocation: function() {
-	
+		
 		var onSuccess = function(position) {
 			var element = document.getElementById('geolocation');
 			
@@ -28,6 +44,8 @@ var app = {
 		window.location = location;
 	},
 	*/
+	
+	// All this unused code is only because you don't put only one subject in one file / object
 	isOnline: function () {
 		return navigator.network.connection.type != Connection.NONE;
 	},
