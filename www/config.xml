@@ -6,10 +6,12 @@
 
 	<name>sample mobile App with GPS</name>
 
+	<!-- THE TEXT INSIDE description must be indented !!! -->
 	<description>
     sample web App with java script and html
 	</description>
 
+	<!-- Don't cut the xml tag or indent correctly, text must be indented too -->
 	<author href="http://lev90.github.com"
     email="levon.hakopyan.gmail.com">
     Levon
