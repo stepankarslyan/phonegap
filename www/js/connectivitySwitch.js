@@ -1,8 +1,11 @@
+// Look code of Stopik for comments as it is exactly the same, work both on your own version !!!
+// I want you both to code !!!
+
 var app = {
 
 	onlineLocation: "http://192.168.10.112:8080",
 	offlineLocation: "www/offline/index.html",
-	openLocation: function(location) {
+	openLocation: function(location) { 
 		window.location = location;
 	},
 	
