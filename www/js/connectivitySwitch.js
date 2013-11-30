@@ -1,8 +1,8 @@
-var app = {
+var app = { // the name of this object should not be app
 
 	onlineLocation: "http://192.168.10.112:8080",
 	offlineLocation: "www/offline/index.html",
-	openLocation: function(location) {
+	openLocation: function(location) { // let a line before and after function
 		window.location = location;
 	},
 	
@@ -13,7 +13,7 @@ var app = {
 	onDeviceReady: function() {
 		
 		if (app.isOnline()) {
-		  app.openLocation(onlineLocation);
+		  app.openLocation(onlineLocation); // Put the correct spaces at beginning of line
 		}
 		else {
 			app.openLocation(app.offlineLocation);
