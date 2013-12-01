@@ -7,12 +7,21 @@
 	<name>sample mobile App with GPS</name>
 
 	<description>
+<<<<<<< HEAD
 		sample web App with java script and html
 	</description>
 
 	<author href="http://lev90.github.com"
 		email="levon.hakopyan.gmail.com">
 		Levon
+=======
+    sample web App with java script and html <!-- correct spaces -->
+	</description>
+
+	<author href="http://lev90.github.com"
+    email="levon.hakopyan.gmail.com"> <!-- correct spaces -->
+    Levon <!-- correct spaces -->
+>>>>>>> adab95d7d17594c7a29a5c016360f72ac65f45f8
 	</author>
 
 	<gap:platforms>
