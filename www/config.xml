@@ -7,12 +7,12 @@
 	<name>sample mobile App with GPS</name>
 
 	<description>
-    sample web App with java script and html
+  	sample web App with java script and html
 	</description>
 
 	<author href="http://lev90.github.com"
-    email="levon.hakopyan.gmail.com">
-    Levon
+  	email="levon.hakopyan.gmail.com">
+  	Levon
 	</author>
 
 	<gap:platforms>
