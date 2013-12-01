@@ -1,29 +1,23 @@
-// Look code of Stopik for comments as it is exactly the same, work both on your own version !!!
-// I want you both to code !!!
+document.addEventListener("deviceready", function() {
 
-var app = {
+	if (connectivitySwitch.isOnline()) {
+		connectivitySwitch.openLocation(connectivitySwitch.onlineLocation);
+	}
+	else {
+		connectivitySwitch.openLocation(connectivitySwitch.offlineLocation);
+	}
 
-	onlineLocation: "http://192.168.10.112:8080",
-	offlineLocation: "www/offline/index.html",
-	openLocation: function(location) { 
-		window.location = location;
-	},
+	var connectivitySwitch = {
 	
-	isOnline: function () {
-		return navigator.network.connection.type != Connection.NONE;
-	},
-
-	onDeviceReady: function() {
-		
-		if (app.isOnline()) {
-		  app.openLocation(onlineLocation);
-		}
-		else {
-			app.openLocation(app.offlineLocation);
-		}
+		onlineLocation: "http://192.168.10.112:8080",
+		offlineLocation: "www/offline/index.html",
 	
-	},
-};
-
-document.addEventListener("deviceready", app.onDeviceReady, false);
-
+		openLocation: function(location) { 
+			window.location = location;
+		},
+	
+		isOnline: function() {
+			return navigator.network.connection.type != Connection.NONE;
+		}
+	};
+}, false);
