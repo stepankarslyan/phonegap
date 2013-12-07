@@ -4,7 +4,6 @@ var connectivitySwitch = {
 	offlineLocation: "www/offline/index.html",
 
 	onDeviceReady: function() {
-	
 		if (connectivitySwitch.isOnline()) {
 			connectivitySwitch.openLocation(connectivitySwitch.onlineLocation);
 		}
