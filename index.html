@@ -6,6 +6,12 @@
 		<script src="js/connectivitySwitch.js"></script>
 	</head>
 	<body>
-		<!-- Call connectivity switch in script tag here -->
+
+		<script>
+			document.addEventListener("deviceready", function() {
+				connectivitySwitch.switch({onlineLocation: "http://192.168.10.112:8080", offlineLocation: "www/offline/index.html"});
+			}, false);
+		</script>
+		
 	</body>
 </html>
