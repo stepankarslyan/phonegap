@@ -1,7 +1,7 @@
 var connectivitySwitch = {	
 	
 	switch: function(config) {
-		if (connectivitySwitch.isOnline()) {
+		if (this.isOnline()) {
 			this.openLocation(config.onlineLocation);
 		}
 		else {

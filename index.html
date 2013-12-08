@@ -9,7 +9,12 @@
 
 		<script>
 			document.addEventListener("deviceready", function() {
-				connectivitySwitch.switch({onlineLocation: "http://192.168.10.112:8080", offlineLocation: "www/offline/index.html"});
+			
+				connectivitySwitch.switch({
+					onlineLocation: "http://192.168.10.112:8080",
+					offlineLocation: "www/offline/index.html"
+				});
+				
 			}, false);
 		</script>
 		
