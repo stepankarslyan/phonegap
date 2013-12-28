@@ -10,7 +10,7 @@ var connectivitySwitch = {
 	},
 
 	isOnline: function() {
-		return navigator.network.connection.type != Connection.NONE;
+		return true;//navigator.network.connection.type != Connection.NONE;
 	},
 	
 	openLocation: function(location) { 
