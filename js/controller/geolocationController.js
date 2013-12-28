@@ -39,7 +39,12 @@ app.geolocationController = {
 	}, 
 	
 	displayError: function(error) {
-		alert('code: ' + error.code + ' ' + error.message);
+		if (error.code != undefined) {
+			alert('code: ' + error.code + ' ' + error.message);
+		}
+		else{
+			alert('code: ' + error.status + ' ' + error.statusText);
+		}
 	},
 	
 	displaySuccess: function(message) {
