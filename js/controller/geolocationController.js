@@ -21,7 +21,7 @@ app.geolocationController = {
 		
 		$.ajax({
 			type: "POST",
-			url: "/geolocation",
+			url: "192.168.10.105/geolocation",
 			
 			data: {
 				position: JSON.stringify(position)

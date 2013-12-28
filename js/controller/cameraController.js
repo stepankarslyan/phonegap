@@ -20,8 +20,8 @@ app.cameraController = {
 		var controller = this;
 		
 		$.ajax({
-			url: '/camera',
 			type: 'POST',
+			url: '192.168.10.105/camera',
 			
 			data: {
 				picture: picture
