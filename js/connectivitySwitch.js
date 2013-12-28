@@ -1,3 +1,4 @@
+// Move this as a service !!!
 var connectivitySwitch = {	
 	
 	switch: function(config) {
