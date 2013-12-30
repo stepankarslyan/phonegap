@@ -1,5 +1,30 @@
 angular.module('app').
+// Put CameraController with little letter as it represent an object not a class !!!
 controller('CameraController', ['$scope', 'CameraService', function($scope, CameraService) {
+	
+	/*
+	// It's better to create an object, if you remember the object constructor pattern
+	var controller = {
+	
+		register: function() {
+			var controller = this;
+	
+			$scope.doSomething = function(param) {
+				controller.doSomething(param);
+			};	
+		},
+		
+		doSomething: function(param) {
+			// ...
+		}
+		
+		// put all functions here
+	};
+	
+	controller.regsiter();
+	
+	return controller;
+	*/
 	
 	$scope.getPicture = function() {
 		var controller = this;
