@@ -1,6 +1,8 @@
 angular.module('app').
 controller('GeolocationController', ['$scope', 'GeolocationService', function($scope, GeolocationService) {
 
+	// Create a real controller object, look the other controller for details...
+
 	$scope.sendGeolocation = function() {		
 		var controller = this;
 	
