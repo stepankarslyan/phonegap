@@ -10,8 +10,8 @@ controller('appController', ['$scope', 'connectivitySwitchService', function($sc
 	$scope.connectivitySwitch = function() {
 	
 		connectivitySwitchService.switch({
-			onlineLocation: "/online",
-			offlineLocation: "/offline"
+			onlineLocation: "#/online",
+			offlineLocation: "#/offline"
 		});
 	};
 	
