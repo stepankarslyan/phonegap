@@ -1,60 +1,62 @@
-app.cameraController = {
-
-	getPicture: function() {
-		var controller = this;
+angular.module('app').
+controller('CameraController', ['$scope', 'CameraService', function($scope, CameraService) {
 	
-		app.cameraService.getPicture({
-		
+	$scope.getPicture = function() {
+		var controller = this;
+
+		CameraService.getPicture({
+
 			onSuccess: function(picture) {
 				controller.sendToServer(picture);
 			},
-			
+	
 			onError: function(error) {
 				controller.displayError(error);
 			}
-			
-		});
-	},
 	
-	sendToServer: function(picture) {
+		});
+	};
+
+	$scope.sendToServer = function(picture) {
 		var controller = this;
-		
+
 		$.ajax({
 			type: 'POST',
-			url: 'http://192.168.10.105:8080/camera',
-			
+			url: 'http://192.168.10.105:8080/pictures',
+	
 			data: {
 				picture: picture
 			},
 			success: function() {
 				controller.displaySuccess("picture saved on server successly");
 			},
-			
+	
 			error: function(error) {
 				controller.displayError(error);
 			}
-			
+	
 		});
-	},
+	};
 	
-	displaySuccess: function(message) {
+	$scope.displaySuccess = function(message) {
 		alert(message);
-	},
-	
-	displayError: function(error) {
+	};
+
+	$scope.displayError = function(error) {
 		if(error.message == undefined && typeof(error) != 'string') {
 			alert("Code: " + error.status + ' ' + error.statusText);
 		}
 		else {
-			
+		
 			if(typeof(error) == 'string') {
 				alert(error);
 			}
 			else {
 				alert("Code: " + error.code + ' ' + error.message);
 			}
-			
+		
 		}
-	}
+	};
 	
-};
+}]);
+

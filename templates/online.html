@@ -1,0 +1,21 @@
+<content ng-controller="textController" has-header="true" has-footer="true">
+	
+	<h3 class="title padding-top60">Welcome !</h3>
+	
+	<div class="list">
+		<div ng-controller="GeolocationController" class="item item-button-right">
+			{{text.location}}
+			<button class="button button-energized" ng-click="sendGeolocation()">
+				<i class="icon ion-location"></i>
+			</button>
+		</div>
+		
+		<div ng-controller="CameraController" class="item item-button-right">
+			{{text.camera}}
+			<button class="button button-energized" ng-click="takePhoto()">
+				<i class="icon ion-camera"></i>
+			</button>
+		</div>
+	</div>
+
+</content>

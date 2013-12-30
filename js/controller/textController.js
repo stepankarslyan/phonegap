@@ -1,4 +1,4 @@
-angular.module('app', []).
+angular.module('app').
 controller('textController', ['$scope', function($scope) {
 
 	$scope.text = {

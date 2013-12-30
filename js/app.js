@@ -1,11 +1,19 @@
-var app = {
+angular.module('app', []).
+config(['$routeProvider', function ($routeProvider) { 
+	$routeProvider.
+		when('/online', { templateUrl: '/templates/online.html'}).
+		when('/offline', { templateUrl: '/templates/offline.html'}).
+		otherwise({ redirectTo: '/' });
+}]).
+controller('appController', ['$scope', 'connectivitySwitchService', function($scope, connectivitySwitchService) {
 
-	sendGeolocation: function() {
-		this.geolocationController.getGeolocation();
-	},
+	$scope.connectivitySwitch = function() {
 	
-	takePhoto: function() {
-		this.cameraController.getPicture();
-	}
+		connectivitySwitchService.switch({
+			onlineLocation: "/online",
+			offlineLocation: "/offline"
+		});
+	};
 	
-};
+}]);
+

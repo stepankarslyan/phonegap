@@ -1,15 +1,21 @@
-app.geolocationService = {
+angular.module('app').
+factory('GeolocationService', function() {
 
-	getGeolocation: function(config) {
-		navigator.geolocation.getCurrentPosition(
-			function(position) {
-				config.onSuccess(position);
-			},
+	return {
+
+		getGeolocation: function(config) {
+			navigator.geolocation.getCurrentPosition(
+				function(position) {
+					config.onSuccess(position);
+				},
 			
-			function(error) {
-				config.onError(error);
-			}
-		);	
-	}
+				function(error) {
+					config.onError(error);
+				}
+			);	
+		}
 	
-};
+	};
+
+});
+

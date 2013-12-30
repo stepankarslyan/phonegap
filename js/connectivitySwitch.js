@@ -1,22 +1,28 @@
-var connectivitySwitch = {	
+angular.module('app').
+factory('connectivitySwitchService', function() {
 	
-	switch: function(config) {
-		if (this.isOnline()) {
-			this.openLocation(config.onlineLocation);
-		}
-		else {
-			this.openLocation(config.offlineLocation);
-		}
-	},
-
-	isOnline: function() {
-		return navigator.network.connection.type != Connection.NONE;
-	},
+	return {	
 	
-	openLocation: function(location) { 
-		window.location = location;
-	}
+		switch: function(config) {
+			if (this.isOnline()) {
+				this.openLocation(config.onlineLocation);
+			}
+			else {
+				this.openLocation(config.offlineLocation);
+			}
+		},
 
-};
+		isOnline: function() {
+			return true;//navigator.network.connection.type != Connection.NONE;
+		},
+	
+		openLocation: function(location) { 
+			window.location = location;
+		}
+
+	};
+	
+});
+
 
 

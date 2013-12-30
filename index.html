@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html>
-	<head>		
-		<title>PhoneGap App</title>
-		<script src="phonegap.js"></script>
+<html ng-app='app'>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
+		
+		
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/jquery/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="lib/ionic/dist/css/ionic.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		<script src="js/app.js"></script>
 		<script src="js/connectivitySwitch.js"></script>
+		<script src="js/controller/textController.js"></script>
+		<script src="js/controller/geolocationController.js"></script>
+		<script src="js/controller/cameraController.js"></script>
+		<script src="js/service/geolocationService.js"></script>
+		<script src="js/service/cameraService.js"></script>
+	
 	</head>
 	<body>
 
-		<script>
-			document.addEventListener("deviceready", function() {
-			
-				connectivitySwitch.switch({
-					onlineLocation: "online/index.html",
-					offlineLocation: "offline/index.html"
-				});
-				
-			}, false);
-		</script>
+		<div class="bar bar-header bar-positive">
+			<a href="/" class="button icon-left ion-home">Home</a>
+			<h1 class="title">Phonegap App</h1>
+		</div>
+		<br>
+		
+		<div ng-view></div>
+		
+		<div class="bar bar-footer bar-positive">
+			<div class="title">Footer</div>
+		</div>
+
+		<div ng-controller="appController">
+			<script>
+				document.addEventListener("deviceready", function() {
+					//must call $scope.connectivitySwitch(); but i dont now how 
+				}, false);
+			</script>
+		</div>
 		
 	</body>
 </html>
