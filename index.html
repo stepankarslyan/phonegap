@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no">
 		
+		<!-- Put all css together and after all js -->
 		<script src="phonegap.js"></script>
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/jquery/jquery.min.js"></script>
@@ -33,9 +34,12 @@
 			<div class="title">Footer</div>
 		</div>
 
+		<!-- put app controller at level of body to manage header and footer -->
 		<div id="appController" ng-controller="appController">
 			<script>
+				// This code should be in phonegap controller not in html
 				document.addEventListener("deviceready", function() {
+					// You must hack angular because you put this in unusual place and don't put id to div !
 					angular.element($('#appController')).scope().connectivitySwitch(); 
 				}, false);
 			</script>
