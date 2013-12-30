@@ -1,4 +1,5 @@
 angular.module('app').
+// Why do you put service out of service folder?
 factory('connectivitySwitchService', function() {
 
 	return {	
@@ -17,6 +18,7 @@ factory('connectivitySwitchService', function() {
 		},
 	
 		openLocation: function(location) { 
+			// Why don't you use angular to change view ?
 			window.location = location;
 		}
 
