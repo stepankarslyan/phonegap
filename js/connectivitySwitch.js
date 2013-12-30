@@ -1,6 +1,6 @@
 angular.module('app').
 factory('connectivitySwitchService', function() {
-	
+
 	return {	
 	
 		switch: function(config) {
@@ -13,7 +13,7 @@ factory('connectivitySwitchService', function() {
 		},
 
 		isOnline: function() {
-			return true;//navigator.network.connection.type != Connection.NONE;
+			return navigator.network.connection.type != Connection.NONE;
 		},
 	
 		openLocation: function(location) { 
