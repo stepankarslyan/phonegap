@@ -1,8 +1,14 @@
-<content ng-controller="textController" has-header="true" has-footer="true">
+<!-- link controller to template in angular route config -->
+<content ng-controller="textController" has-header="true" has-footer="true"> <!-- don't user this has header and footer what is not needed -->
 	
-	<h3 class="title padding-top60">Welcome !</h3>
+	<h3 class="title padding-top60">Welcome !</h3> <!-- Don't use class like this, html must only get content not presentation -->
 	
 	<div class="list">
+	
+		<!-- You mix the notion of controller and service, controller is to glue view and services !!!
+			use only one controller for the view that will use 2 services,  geolocation and camera service
+			and link controller and view in the route config -->
+			
 		<div ng-controller="GeolocationController" class="item item-button-right">
 			{{text.location}}
 			<button class="button button-energized" ng-click="sendGeolocation()">
@@ -19,3 +25,4 @@
 	</div>
 
 </content>
+<!-- don't let empty line at the end ! -->
