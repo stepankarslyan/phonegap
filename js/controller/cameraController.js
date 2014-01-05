@@ -1,5 +1,5 @@
 angular.module('app').
-controller('cameraController', ['$scope', 'CameraService', function($scope, CameraService) {
+controller('cameraController', ['$scope', 'cameraService', function($scope, CameraService) {
 
 	$scope.controller = {
 	
@@ -8,7 +8,7 @@ controller('cameraController', ['$scope', 'CameraService', function($scope, Came
 		getPicture: function() {
 			var controller = this;
 
-			CameraService.getPicture({
+			cameraService.getPicture({
 
 				onSuccess: function(picture) {
 					controller.sendToServer(picture);

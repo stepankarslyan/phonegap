@@ -1,5 +1,5 @@
 angular.module('app').
-factory('CameraService', function() {
+factory('cameraService', function() {
 
 	return {
 

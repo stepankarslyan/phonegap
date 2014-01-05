@@ -1,5 +1,5 @@
 angular.module('app').
-factory('GeolocationService', function() {
+factory('geolocationService', function() {
 
 	return {
 

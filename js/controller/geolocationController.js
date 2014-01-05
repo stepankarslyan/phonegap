@@ -1,5 +1,5 @@
 angular.module('app').
-controller('geolocationController', ['$scope', 'GeolocationService', function($scope, GeolocationService) {
+controller('geolocationController', ['$scope', 'geolocationService', function($scope, GeolocationService) {
 
 	$scope.controller = {
 
@@ -8,7 +8,7 @@ controller('geolocationController', ['$scope', 'GeolocationService', function($s
 		sendGeolocation: function() {		
 			var controller = this;
 	
-			GeolocationService.getGeolocation({
+			geolocationService.getGeolocation({
 	
 				onSuccess: function(position) {
 					controller.sendGeolocation(position);	

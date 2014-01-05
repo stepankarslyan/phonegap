@@ -5,14 +5,14 @@
 	<div class="list">
 		<div ng-controller="geolocationController" class="item item-button-right">
 			{{controller.locationText}}
-			<button class="button button-energized" ng-click="sendGeolocation()">
+			<button class="button button-energized" ng-click="controller.sendGeolocation()">
 				<i class="icon ion-location"></i>
 			</button>
 		</div>
 		
 		<div ng-controller="cameraController" class="item item-button-right">
 			{{controller.cameraText}}
-			<button class="button button-energized" ng-click="takePhoto()">
+			<button class="button button-energized" ng-click="controller.getPicture()">
 				<i class="icon ion-camera"></i>
 			</button>
 		</div>
