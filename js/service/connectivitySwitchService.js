@@ -1,5 +1,5 @@
 angular.module('app').
-factory('connectivitySwitchService', function() {
+factory('connectivitySwitchService',['$location', function($location) {
 
 	return {	
 	
@@ -17,12 +17,9 @@ factory('connectivitySwitchService', function() {
 		},
 	
 		openLocation: function(location) { 
-			window.location = location;
+			$location.path(location);
 		}
 
 	};
 	
-});
-
-
-
+}]);

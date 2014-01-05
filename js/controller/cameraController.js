@@ -1,62 +1,67 @@
 angular.module('app').
-controller('CameraController', ['$scope', 'CameraService', function($scope, CameraService) {
-	
-	$scope.getPicture = function() {
-		var controller = this;
+controller('cameraController', ['$scope', 'CameraService', function($scope, CameraService) {
 
-		CameraService.getPicture({
+	$scope.controller = {
+	
+		cameraText: "Push buttom to capture photo and send to server automaticly",
+	
+		getPicture: function() {
+			var controller = this;
 
-			onSuccess: function(picture) {
-				controller.sendToServer(picture);
-			},
-	
-			onError: function(error) {
-				controller.displayError(error);
-			}
-	
-		});
-	};
+			CameraService.getPicture({
 
-	$scope.sendToServer = function(picture) {
-		var controller = this;
+				onSuccess: function(picture) {
+					controller.sendToServer(picture);
+				},
+	
+				onError: function(error) {
+					controller.displayError(error);
+				}
+	
+			});
+		},
 
-		$.ajax({
-			type: 'POST',
-			url: 'http://192.168.10.105:8080/pictures',
-	
-			data: {
-				picture: picture
-			},
-			success: function() {
-				controller.displaySuccess("picture saved on server successly");
-			},
-	
-			error: function(error) {
-				controller.displayError(error);
-			}
-	
-		});
-	};
-	
-	$scope.displaySuccess = function(message) {
-		alert(message);
-	};
+		sendToServer: function(picture) {
+			var controller = this;
 
-	$scope.displayError = function(error) {
-		if(error.message == undefined && typeof(error) != 'string') {
-			alert("Code: " + error.status + ' ' + error.statusText);
-		}
-		else {
-		
-			if(typeof(error) == 'string') {
-				alert(error);
+			$.ajax({
+				type: 'POST',
+				url: 'http://192.168.10.105:8080/pictures',
+	
+				data: {
+					picture: picture
+				},
+				success: function() {
+					controller.displaySuccess("picture saved on server successly");
+				},
+	
+				error: function(error) {
+					controller.displayError(error);
+				}
+	
+			});
+		},
+	
+		displaySuccess: function(message) {
+			alert(message);
+		},
+
+		displayError: function(error) {
+			if(error.message == undefined && typeof(error) != 'string') {
+				alert("Code: " + error.status + ' ' + error.statusText);
 			}
 			else {
-				alert("Code: " + error.code + ' ' + error.message);
-			}
 		
+				if(typeof(error) == 'string') {
+					alert(error);
+				}
+				else {
+					alert("Code: " + error.code + ' ' + error.message);
+				}
+		
+			}
 		}
+		
 	};
 	
 }]);
-

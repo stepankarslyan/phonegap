@@ -18,4 +18,3 @@ factory('GeolocationService', function() {
 	};
 
 });
-

@@ -1,55 +1,60 @@
 angular.module('app').
-controller('GeolocationController', ['$scope', 'GeolocationService', function($scope, GeolocationService) {
+controller('geolocationController', ['$scope', 'GeolocationService', function($scope, GeolocationService) {
 
-	$scope.sendGeolocation = function() {		
-		var controller = this;
+	$scope.controller = {
+
+		locationText: "Push buttom to send to server your location information",
 	
-		GeolocationService.getGeolocation({
+		sendGeolocation: function() {		
+			var controller = this;
 	
-			onSuccess: function(position) {
-				controller.sendGeolocation(position);	
-			},
+			GeolocationService.getGeolocation({
+	
+				onSuccess: function(position) {
+					controller.sendGeolocation(position);	
+				},
 		
-			onError: function(error) {
-				controller.displayError(error);			
+				onError: function(error) {
+					controller.displayError(error);			
+				}
+		
+			});	
+		},
+
+		sendGeolocation: function(position) {
+			var controller = this;
+	
+			$.ajax({
+				type: "POST",
+				url: "http://192.168.10.105:8080/geolocation",
+		
+				data: {
+					position: JSON.stringify(position)
+				},
+		
+				success: function() {
+					controller.displaySuccess("Your data is sent to the server!");
+				},
+
+				error: function(error) {
+					controller.displayError(error);
+				}
+			  
+			});		     
+		},
+
+		displayError: function(error) {
+			if (error.code != undefined) {
+				alert('code: ' + error.code + ' ' + error.message);
 			}
-		
-		});	
-	};
-
-	$scope.sendGeolocation = function(position) {
-		var controller = this;
-	
-		$.ajax({
-			type: "POST",
-			url: "http://192.168.10.105:8080/geolocation",
-		
-			data: {
-				position: JSON.stringify(position)
-			},
-		
-			success: function() {
-				controller.displaySuccess("Your data is sent to the server!");
-			},
-
-			error: function(error) {
-				controller.displayError(error);
+			else{
+				alert('code: ' + error.status + ' ' + error.statusText);
 			}
-	    
-		});		     
-	};
+		},
 
-	$scope.displayError = function(error) {
-		if (error.code != undefined) {
-			alert('code: ' + error.code + ' ' + error.message);
+		displaySuccess: function(message) {
+			alert(message);
 		}
-		else{
-			alert('code: ' + error.status + ' ' + error.statusText);
-		}
-	};
-
-	$scope.displaySuccess = function(message) {
-		alert(message);
 	};
 	
 }]);

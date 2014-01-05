@@ -11,16 +11,16 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		
 		<script src="js/app.js"></script>
-		<script src="js/connectivitySwitch.js"></script>
-		<script src="js/controller/textController.js"></script>
+		<script src="js/controller/connectivitySwitchController.js"></script>
 		<script src="js/controller/geolocationController.js"></script>
 		<script src="js/controller/cameraController.js"></script>
+		<script src="js/service/connectivitySwitchService.js"></script>
 		<script src="js/service/geolocationService.js"></script>
 		<script src="js/service/cameraService.js"></script>
 	
 	</head>
 	<body>
-
+pp
 		<div class="bar bar-header bar-positive">
 			<a href="/" class="button icon-left ion-home">Home</a>
 			<h1 class="title">Phonegap App</h1>
@@ -33,10 +33,10 @@
 			<div class="title">Footer</div>
 		</div>
 
-		<div id="appController" ng-controller="appController">
+		<div id="connectivitySwitchController" ng-controller="connectivitySwitchController">
 			<script>
 				document.addEventListener("deviceready", function() {
-					angular.element($('#appController')).scope().connectivitySwitch(); 
+					angular.element($('#connectivitySwitchController')).scope().connectivitySwitch(); 
 				}, false);
 			</script>
 		</div>
