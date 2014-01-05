@@ -1,5 +1,5 @@
 angular.module('app').
-factory('connectivitySwitchService',['$location', function($location) {
+factory('connectivitySwitchService', ['$location', function($location) {
 
 	return {	
 	

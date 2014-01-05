@@ -1,5 +1,5 @@
 angular.module('app').
-controller('geolocationController', ['$scope', 'geolocationService', function($scope, GeolocationService) {
+controller('geolocationController', ['$scope', 'geolocationService', function($scope, geolocationService) {
 
 	$scope.controller = {
 

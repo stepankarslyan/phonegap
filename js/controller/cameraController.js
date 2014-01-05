@@ -1,5 +1,5 @@
 angular.module('app').
-controller('cameraController', ['$scope', 'cameraService', function($scope, CameraService) {
+controller('cameraController', ['$scope', 'cameraService', function($scope, cameraService) {
 
 	$scope.controller = {
 	
