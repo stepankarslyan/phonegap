@@ -5,7 +5,7 @@ controller('geolocationController', ['$scope', 'geolocationService', function($s
 
 		locationText: "Push buttom to send to server your location information",
 	
-		sendGeolocation: function() {		
+		getGeolocation: function() {		
 			var controller = this;
 	
 			geolocationService.getGeolocation({
