@@ -3,7 +3,7 @@ controller('geolocationController', ['$scope', 'geolocationService', function($s
 
 	$scope.controller = {
 
-		locationText: "Push buttom to send to server your location information",
+		locationText: "Push button to send to server your location information",
 	
 		getGeolocation: function() {		
 			var controller = this;
