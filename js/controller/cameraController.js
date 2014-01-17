@@ -3,8 +3,6 @@ controller('cameraController', ['$scope', 'cameraService', function($scope, came
 
 	$scope.controller = {
 	
-		cameraText: "Push button to capture photo and save on server",
-	
 		getPicture: function() {
 			var controller = this;
 

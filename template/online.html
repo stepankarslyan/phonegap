@@ -1,17 +1,17 @@
 <content has-header="true" has-footer="true">
 	
-	<h3 class="title padding-top60">Welcome !</h3> <!-- change class name -->
+	<h3 class="title padding-top60">Welcome !</h3>
 	
 	<div class="list">
 		<div ng-controller="geolocationController" class="item item-button-right">
-			{{controller.locationText}}
+			<p>Push button to send to server your location information</p>
 			<button class="button button-energized" ng-click="controller.getGeolocation()">
 				<i class="icon ion-location"></i>
 			</button>
 		</div>
 		
 		<div ng-controller="cameraController" class="item item-button-right">
-			{{controller.cameraText}}
+			<p>Push button to capture photo and save on server</p>
 			<button class="button button-energized" ng-click="controller.getPicture()">
 				<i class="icon ion-camera"></i>
 			</button>

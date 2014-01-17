@@ -1,9 +1,9 @@
 angular.module('app').
 factory('connectivitySwitchService', ['$location', function($location) {
 
-	return {	
+	return {
 	
-		switch: function(config) { // switch is langage word, don't use as propertiy name
+		toggle: function(config) {
 			if (this.isOnline()) {
 				this.openLocation(config.onlineLocation);
 			}

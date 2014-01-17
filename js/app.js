@@ -1,8 +1,7 @@
 angular.module('app', ['ngRoute']).
 config(['$routeProvider', function($routeProvider) { 
 	$routeProvider.
-		when('/online', { templateUrl: '/templates/online.html'}).
-		when('/offline', { templateUrl: '/templates/offline.html'}).
+		when('/online', { templateUrl: '/template/online.html'}).
+		when('/offline', { templateUrl: '/template/offline.html'}).
 		otherwise({ redirectTo: '/' });
-		// Why don't you link controllers?
 }]);

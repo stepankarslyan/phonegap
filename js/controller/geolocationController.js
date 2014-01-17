@@ -3,8 +3,6 @@ controller('geolocationController', ['$scope', 'geolocationService', function($s
 
 	$scope.controller = {
 
-		locationText: "Push button to send to server your location information",
-	
 		getGeolocation: function() {		
 			var controller = this;
 	
@@ -26,7 +24,7 @@ controller('geolocationController', ['$scope', 'geolocationService', function($s
 	
 			$.ajax({
 				type: "POST",
-				url: "http://192.168.10.105:8080/geolocation",
+				url: "http://localhost:8080/geolocation",
 		
 				data: {
 					position: JSON.stringify(position)

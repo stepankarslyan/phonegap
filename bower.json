@@ -3,7 +3,8 @@
   "description": "Phonegap app with GPS and Camera suport",
   "version": "0.0.1",
   "dependencies": {
-    // As we use angularjs as main technilogy and ionic only for style, may be it woudl be better to declare angular here and not to use the js in the ionic dist
+   	"angular": "*",
+   	"angular-route": "*",
     "ionic": "*",
     "jquery": "*"
   }

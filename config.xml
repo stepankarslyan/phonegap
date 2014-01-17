@@ -7,11 +7,10 @@
 	<name>sample mobile App with GPS</name>
 
 	<description>
-		sample web App with java script and html
+		sample mobile App with java script and html
 	</description>
 
-	<author href="http://lev90.github.com"
-		email="levon.hakopyan.gmail.com"> <!-- Put this on one line, email is not correct -->
+	<author href="http://lev90.github.com" email="levon.hakopyan.gmail.com">
 		Levon
 	</author>
 
