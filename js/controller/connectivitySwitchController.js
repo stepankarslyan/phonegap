@@ -1,3 +1,4 @@
+// What is the meaning of this controller?
 angular.module('app').
 controller('connectivitySwitchController', ['$scope', 'connectivitySwitchService', function($scope, connectivitySwitchService) {
 
