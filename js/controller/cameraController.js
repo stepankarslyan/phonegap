@@ -30,7 +30,7 @@ controller('cameraController', ['$scope', 'cameraService', function($scope, came
 	
 				data: {
 					picture: picture
-				},
+				}, // <-- you forgot one empty line before function
 				success: function() {
 					controller.displaySuccess("picture saved on server successly");
 				},
@@ -47,6 +47,8 @@ controller('cameraController', ['$scope', 'cameraService', function($scope, came
 		},
 
 		displayError: function(error) {
+			// Why this mess? Don't put differrent kind of structure in the same parameter
+			// Why do you ask to display error that is undefined or a string? Call this function with the right error object !
 			if(error.message == undefined && typeof(error) != 'string') {
 				alert("Code: " + error.status + ' ' + error.statusText);
 			}
