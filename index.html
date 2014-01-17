@@ -36,6 +36,7 @@
 
 		<div id="connectivitySwitch" ng-controller="connectivitySwitchController">
 			<script>
+				// Why don't you want to put this code in a controller?
 				document.addEventListener("deviceready", function() {
 					angular.element($('#connectivitySwitch')).scope().connectivitySwitch(); 
 				}, false);
