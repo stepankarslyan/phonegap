@@ -11,7 +11,7 @@
 	</description>
 
 	<author href="http://lev90.github.com"
-		email="levon.hakopyan.gmail.com">
+		email="levon.hakopyan.gmail.com"> <!-- Put this on one line, email is not correct -->
 		Levon
 	</author>
 
