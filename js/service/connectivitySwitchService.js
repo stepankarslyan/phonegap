@@ -3,7 +3,7 @@ factory('connectivitySwitchService', ['$location', function($location) {
 
 	return {	
 	
-		switch: function(config) {
+		switch: function(config) { // switch is langage word, don't use as propertiy name
 			if (this.isOnline()) {
 				this.openLocation(config.onlineLocation);
 			}
