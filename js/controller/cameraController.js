@@ -26,7 +26,7 @@ controller('cameraController', ['$scope', 'cameraService', function($scope, came
 
 			$.ajax({
 				type: 'POST',
-				url: 'http://192.168.10.105:8080/pictures',
+				url: 'http://192.168.10.105:8080/pictures', // You shoudl find a way to put the server url only in one config place and not to repeat in code in every ajax because when code will grow you'll duplicate the url and it will be difficult to change later
 	
 				data: {
 					picture: picture
