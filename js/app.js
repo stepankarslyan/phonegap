@@ -4,4 +4,5 @@ config(['$routeProvider', function($routeProvider) {
 		when('/online', { templateUrl: '/templates/online.html'}).
 		when('/offline', { templateUrl: '/templates/offline.html'}).
 		otherwise({ redirectTo: '/' });
+		// Why don't you link controllers?
 }]);
