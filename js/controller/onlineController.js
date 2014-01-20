@@ -1,5 +1,5 @@
 angular.module('app').
-controller('onlineController', ['$scope','geolocationService', 'cameraService', function($scope, geolocationService, cameraService) {
+controller('onlineController', ['$scope','geolocationService', 'cameraService', 'connectivitySwitchService', function($scope, geolocationService, cameraService, connectivitySwitchService) {
 	
 	$scope.controller = {
 	
@@ -92,7 +92,22 @@ controller('onlineController', ['$scope','geolocationService', 'cameraService', 
 
 		displaySuccess: function(message) {
 			alert(message);
-		}
+		},
+		
+		connectivitySwitch: function() {
+	
+			connectivitySwitchService.toggle({
+				onlineLocation: "/online",
+				offlineLocation: "/offline"
+			});
+		
+			$scope.$apply();
+		},
+		
 	};
+	
+	document.addEventListener("deviceready", function() {
+		$scope.controller.connectivitySwitch(); 
+	}, false);
 	
 }]);
