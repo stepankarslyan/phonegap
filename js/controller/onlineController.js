@@ -25,8 +25,8 @@ controller('onlineController', ['$scope','geolocationService', 'cameraService', 
 			var controller = this;
 			var config = {
 				url: controller.serverUrl + "/geolocation",
-				data: {
-					position: position
+				data:{
+					position: JSON.stringify(position)
 				},
 				successMessage: "Your data sent to server"
 			};
@@ -54,7 +54,7 @@ controller('onlineController', ['$scope','geolocationService', 'cameraService', 
 			var config = {
 				url: controller.serverUrl + "/geolocation",
 				data: {
-					picture: picture
+					picture: JSON.stringify(picture)
 				},
 				successMessage: "Your picture saved on server successly"
 			};
@@ -68,7 +68,7 @@ controller('onlineController', ['$scope','geolocationService', 'cameraService', 
 				type: "POST",
 				url: config.url,
 		
-				data: JSON.stringify(config.data),
+				data: config.data,
 		
 				success: function() {
 					controller.displaySuccess(config.successMessage);
