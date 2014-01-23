@@ -1,11 +1,16 @@
 angular.module('app').
 controller('onlineController', ['$scope','geolocationService', 'cameraService', 'connectivitySwitchService', function($scope, geolocationService, cameraService, connectivitySwitchService) {
 	
-	// Don't put controller in scope
-	// - it's anti patern, the view must access the model not the controller !
-	// - it's not good for performance as angular js is checking the changes on scope to refresh the view
 	// Reuse the pattern we used in the nodejs project
-	$scope.controller = {
+	$scope.sendGeolocation = function() {
+		controller.getGeolocation();
+	};
+	
+	$scope.sendPicture = function() {
+		controller.getPicture();
+	};
+	
+	var controller = {
 	
 		serverUrl: 'http://localhost:8080',
 
@@ -113,7 +118,7 @@ controller('onlineController', ['$scope','geolocationService', 'cameraService', 
 	// Is it necessary ? Think about what you need, avoid copy paste without 
 	// thinking of the reingeneering!
 	document.addEventListener("deviceready", function() {
-		$scope.controller.connectivitySwitch(); 
+		controller.connectivitySwitch(); 
 	}, false);
 	
 }]);
